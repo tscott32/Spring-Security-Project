@@ -9,7 +9,10 @@ import java.util.stream.Collectors;
 
 import static com.example.springsecuritytutorial.security.ApplicationUserPermission.*;
 
+// Enumerated Type for defining the roles of students
 public enum ApplicationUserRole {
+
+    // Assigns permissions from ApplicationUserPermission Enum to roles
     STUDENT(Sets.newHashSet()),
     ADMIN(Sets.newHashSet(COURSE_READ, COURSE_WRITE, STUDENT_READ, STUDENT_WRITE)),
     ADMINTRAINEE(Sets.newHashSet(COURSE_READ, STUDENT_READ));
@@ -24,6 +27,7 @@ public enum ApplicationUserRole {
         return permissions;
     }
 
+    // Returns a set of the authorities that are allowed for a student role
     public Set<SimpleGrantedAuthority> getGrantedAuthorities() {
         Set<SimpleGrantedAuthority> permissions = getPermissions().stream()
                 .map(permission -> new SimpleGrantedAuthority(permission.getPermission()))

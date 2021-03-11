@@ -1,5 +1,7 @@
 package com.example.springsecuritytutorial.jwt;
 
+
+
 public class UsernameAndPasswordAuthenticationRequest {
 
     private String username;

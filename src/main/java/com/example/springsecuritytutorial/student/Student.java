@@ -1,5 +1,6 @@
 package com.example.springsecuritytutorial.student;
 
+// Student model to define student attributes
 public class Student {
 
     private final Integer studentId;

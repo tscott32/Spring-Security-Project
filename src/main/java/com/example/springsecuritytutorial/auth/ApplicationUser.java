@@ -7,6 +7,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Set;
 
+// Model that implements UserDetails and overrides its methods
 public class ApplicationUser implements UserDetails {
 
     private final String username;
